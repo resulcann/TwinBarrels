@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f93586eac509242a7bc6f9543c1f2d11, type: 3}
-  m_Name: AvatarDatabasePrefab
+  m_Name: AvatarDatabase
   m_EditorClassIdentifier: 
-  botSprites: []
+  avatarSprites: []
