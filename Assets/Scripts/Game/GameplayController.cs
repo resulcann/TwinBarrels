@@ -6,7 +6,7 @@ using MoreMountains.NiceVibrations;
 
 public class GameplayController : MonoBehaviour
 {
-    public bool IsActive { get; private set; }
+    private bool IsActive { get; set; }
 
     public Action<bool> OnGameplayFinished;
 
