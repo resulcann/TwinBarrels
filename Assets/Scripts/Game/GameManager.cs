@@ -7,12 +7,12 @@ using MoreMountains.NiceVibrations;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
+    public int diamondScore = 0;
     [Header("References")]
     public GameplayController gameplayController;
     public DynamicSettings dynamicSettings;
 
-    public GameState CurrentGameState { get; private set; }
+    private GameState CurrentGameState { get; set; }
 
     public bool IsLoadingFinished => CurrentGameState != GameState.None && CurrentGameState != GameState.Loading;
 

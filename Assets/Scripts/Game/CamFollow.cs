@@ -6,13 +6,13 @@ namespace Game
     {
         public Transform target;
         public Vector3 offset;
-    
+
 
         private void LateUpdate()
         {
-            transform.position = target.position + offset;
+            transform.position = Vector3.Lerp(transform.position, target.position + offset, 0.25f);
+            transform.LookAt(target);
 
         }
-    
     }
 }
