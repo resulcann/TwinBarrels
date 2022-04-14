@@ -8,6 +8,9 @@ TagManager:
   - Collected
   - Enemy
   - Diamond
+  - Stairs
+  - SpeedDown
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 3187558892275967069}
   - component: {fileID: 5078819292455643552}
   - component: {fileID: -7437477912315287375}
+  - component: {fileID: 2209200235965726768}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Player
@@ -143,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8671708, y: 0.6871929, z: 0.70173424}
-  m_Center: {x: 0.43442434, y: 0.0018177032, z: -0.0018177032}
+  m_Size: {x: 0.8646066, y: 0.55005443, z: 0.6648914}
+  m_Center: {x: 0.43322942, y: -0.0014631152, z: -0.00027008852}
 --- !u!54 &-7437477912315287375
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161,3 +162,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2209200235965726768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527901951192563665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97235a0a42d8fb444a3abcf90b3be4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collector: {fileID: 0}
+  greenMat: {fileID: 2100000, guid: 12ee35b8d717d9043b80c0fe38d3ce11, type: 2}
