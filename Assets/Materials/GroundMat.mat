@@ -75,7 +75,7 @@ Material:
     - _OutlineWidth: 0.08
     - _Parallax: 0.02
     - _RampSmooth: 1
-    - _RampThreshold: 0.5
+    - _RampThreshold: 0
     - _ReflectRoughness: 0
     - _Smoothness: 0.2
     - _SmoothnessTextureChannel: 0
