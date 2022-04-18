@@ -73,15 +73,30 @@ namespace Game
 
             if (other.gameObject.CompareTag("Stairs"))
             {
-                transform.localPosition = new Vector3(transform.localPosition.x,
-                    transform.localPosition.y + 0.5f, transform.localPosition.z);
+                if (barrelList.Count > 1)
+                {
+                    transform.localPosition = new Vector3(transform.localPosition.x,
+                        transform.localPosition.y + 0.5f, transform.localPosition.z);
                 
-                trailPos.localPosition = new Vector3(trailPos.localPosition.x,
-                    trailPos.localPosition.y + 0.5f, trailPos.localPosition.z);
+                    trailPos.localPosition = new Vector3(trailPos.localPosition.x,
+                        trailPos.localPosition.y + 0.5f, trailPos.localPosition.z);
                 
-                rootBarrel.transform.parent.localPosition = new Vector3(rootBarrel.transform.parent.localPosition.x,
-                    rootBarrel.transform.parent.localPosition.y + 0.5f, rootBarrel.transform.parent.localPosition.z);
+                    rootBarrel.transform.parent.localPosition = new Vector3(rootBarrel.transform.parent.localPosition.x,
+                        rootBarrel.transform.parent.localPosition.y + 0.5f, rootBarrel.transform.parent.localPosition.z);
+                }
+                else
+                {
+                    gameplayController.FinishGameplay(false);
+                    splineFollower.follow = false;
+                }
+                
 
+            }
+
+            if (other.gameObject.CompareTag("Finish"))
+            {
+                gameplayController.FinishGameplay(true);
+                splineFollower.follow = false;
             }
 
             if (other.gameObject.CompareTag("SpeedUp")) splineFollower.followSpeed = 10f;
