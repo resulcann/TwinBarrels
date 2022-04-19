@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Dreamteck.Splines;
 using Sirenix.Utilities;
@@ -29,7 +30,7 @@ namespace Game
 
         private void LateUpdate()
         {
-            cameraFollowTarget.localPosition = Vector3.Lerp(cameraFollowTarget.localPosition ,new Vector3(0f, transform.localPosition.y, 1f), .25f);
+            cameraFollowTarget.localPosition = Vector3.Lerp(cameraFollowTarget.localPosition ,new Vector3(0f, transform.parent.localPosition.y, 1f), .25f);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -75,14 +76,8 @@ namespace Game
             {
                 if (barrelList.Count > 1)
                 {
-                    transform.localPosition = new Vector3(transform.localPosition.x,
-                        transform.localPosition.y + 0.5f, transform.localPosition.z);
-                
-                    trailPos.localPosition = new Vector3(trailPos.localPosition.x,
-                        trailPos.localPosition.y + 0.5f, trailPos.localPosition.z);
-                
-                    rootBarrel.transform.parent.localPosition = new Vector3(rootBarrel.transform.parent.localPosition.x,
-                        rootBarrel.transform.parent.localPosition.y + 0.5f, rootBarrel.transform.parent.localPosition.z);
+                    transform.parent.localPosition = new Vector3(transform.parent.localPosition.x,
+                        transform.parent.localPosition.y + 0.5f, transform.parent.localPosition.z);
                 }
                 else
                 {
@@ -90,7 +85,6 @@ namespace Game
                     splineFollower.follow = false;
                 }
                 
-
             }
 
             if (other.gameObject.CompareTag("Finish"))
