@@ -14,6 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelPrefab: {fileID: 8771545443500715678, guid: 5736a3c8cefb3a64aab1697889fe1195,
     type: 3}
-  levelIndex: 0
-  player: {fileID: 0}
-  virtualCamera: {fileID: 0}
+  levelIndex: 1

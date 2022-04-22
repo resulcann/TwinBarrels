@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.NiceVibrations;
 
 public class GameplayController : MonoBehaviour
 {
+    public static GameplayController Instance { get; private set; }
     public bool IsActive { get; set; }
 
     public Action<bool> OnGameplayFinished;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void StartGameplay()
     {

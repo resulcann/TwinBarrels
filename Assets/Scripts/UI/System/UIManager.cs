@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game;
 using UnityEngine;
 using UnityEngine.UI;
 using Magiclab.MarketingSDK.Core;

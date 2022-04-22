@@ -12,7 +12,7 @@ namespace Game
 
         private float _mouseStartPos, _mouseCurrentPos, _playerCurrentPos, _leftBarrelCurrentPos, _rightBarrelCurrentPos;
         public Transform leftBarrel, rightBarrel;
-        public GameplayController gameplayController;
+        // public GameplayController gameplayController;
         private SplineFollower _splineFollower;
         
 
@@ -26,13 +26,13 @@ namespace Game
             _rightBarrelCurrentPos = transform.localPosition.x;
             _mouseStartPos = Input.mousePosition.x;
             _mouseStartPos /= Screen.width;
-            
+            _splineFollower.follow = false;
+
         }
 
         private void Update()
         {
-            _splineFollower.follow = gameplayController.IsActive;
-            if (gameplayController.IsActive == false) return;
+            if (GameplayController.Instance.IsActive == false) return;
             
             HandLeMovement();
         }

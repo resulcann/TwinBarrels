@@ -93,7 +93,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b95b6ed818bb4f84c9ba426b7619d8f9,
         type: 3}
       propertyPath: m_Name
-      value: Box_4
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b95b6ed818bb4f84c9ba426b7619d8f9,
         type: 3}
@@ -103,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b95b6ed818bb4f84c9ba426b7619d8f9,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: EnemyBox
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b95b6ed818bb4f84c9ba426b7619d8f9, type: 3}
