@@ -14,12 +14,12 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.4417412, g: 0.82230973, b: 0.9882353, a: 1}
-  m_FogMode: 2
-  m_FogDensity: 0.00015
-  m_LinearFogStart: 7630.8
-  m_LinearFogEnd: 7638.71
+  m_FogMode: 1
+  m_FogDensity: 1
+  m_LinearFogStart: 50
+  m_LinearFogEnd: 100
   m_AmbientSkyColor: {r: 0.7529412, g: 0.7529412, b: 0.7529412, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: eac9ddbac398d664c8f85eec552c56c9,
+    type: 2}
   m_LightingSettings: {fileID: 1280146472}
 --- !u!196 &4
 NavMeshSettings:
@@ -364,7 +365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: 0}
+  m_AnchoredPosition: {x: 100, y: 0}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &263598738
@@ -415,14 +416,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 32
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -642,7 +643,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 125, y: 125}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &732521855
 MonoBehaviour:
@@ -846,12 +847,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6e52860253dc8c04abdf9b3191725476,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -691
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e52860253dc8c04abdf9b3191725476,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2077
+      value: 1409
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e52860253dc8c04abdf9b3191725476,
         type: 3}
@@ -991,7 +992,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.11248389, y: -0.08195348, z: 0.009309452, w: 0.9902244}
+  m_LocalRotation: {x: 0.11248388, y: -0.08195346, z: 0.009309447, w: 0.9902244}
   m_LocalPosition: {x: 1.5, y: 6, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -36731,15 +36732,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1840614249, guid: 7e2ec61a2829098478c212bd878a51b5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.11248389
+      value: 0.11248388
       objectReference: {fileID: 0}
     - target: {fileID: 1840614249, guid: 7e2ec61a2829098478c212bd878a51b5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.08195348
+      value: -0.08195346
       objectReference: {fileID: 0}
     - target: {fileID: 1840614249, guid: 7e2ec61a2829098478c212bd878a51b5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.009309452
+      value: 0.009309447
       objectReference: {fileID: 0}
     - target: {fileID: 8771545442313263225, guid: 7e2ec61a2829098478c212bd878a51b5,
         type: 3}
@@ -36810,6 +36811,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8771545443500715678, guid: 7e2ec61a2829098478c212bd878a51b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2ec61a2829098478c212bd878a51b5, type: 3}

@@ -94,7 +94,14 @@ namespace Game
 
             if (other.gameObject.CompareTag("Stairs"))
             {
-                StairsClimbing(other.gameObject);
+                if (barrelList.Count > 1)
+                { 
+                    StairsClimbing(other.gameObject);
+                }
+                else
+                {
+                    FinishFailed();
+                }
             }
 
             if (other.gameObject.CompareTag("FinishStairs"))
@@ -166,10 +173,10 @@ namespace Game
                 foreach (var body in allEnemyRigidBodies)
                 {
                     body.AddExplosionForce(500, collidedBox.position, 1);
-
+            
                     Destroy(collidedBox.gameObject);
                 }
-
+            
             }
         }
 
