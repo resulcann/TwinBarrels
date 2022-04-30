@@ -1,40 +1,56 @@
 using System.Collections.Generic;
-using Game;
-using TMPro;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+namespace Game
 {
-    public static LevelManager Instance { get; private set; }
-    public List<Level> Levels;
-    public int currentLevelIndex = 1;
-    
-
-    private void Awake() 
+    public class LevelManager : MonoBehaviour
     {
-        Instance = this;
-    }
+        public static LevelManager Instance { get; private set; }
+        public List<Level> Levels;
+        public int currentLevelIndex = 0;
+        private bool _isRandom;
 
-    private void Start() 
-    {
-        SpawnCurrentLevel();
+        private void Awake() 
+        {
+            Instance = this;
+            _isRandom = false;
+        }
+
+        private void Start() 
+        {
+            SpawnCurrentLevel();
         
-    }
+        }
 
-    private void SpawnCurrentLevel()
-    {
-        Levels[currentLevelIndex].CreateLevel();
-    }
+        private void SpawnCurrentLevel()
+        {
+            Levels[currentLevelIndex].CreateLevel();
+        }
 
-    public void NextLevel()
-    {
-        Levels[currentLevelIndex].DestroyLevel();
-        Levels[currentLevelIndex + 1].CreateLevel();
-    }
-    public void RetryLevel()
-    {
-        Levels[currentLevelIndex].DestroyLevel();
-        Levels[currentLevelIndex].CreateLevel();
-    }
+        public void NextLevel()
+        {
+            if (_isRandom == false)
+            {
+                Levels[currentLevelIndex].DestroyLevel();
+                currentLevelIndex++;
+                Levels[currentLevelIndex].CreateLevel();
+                if (currentLevelIndex == 4) _isRandom = true;
+            }
+            else
+            {
+                var randomValue = Random.Range(0, 5);
+                Levels[currentLevelIndex].DestroyLevel();
+                while (randomValue == currentLevelIndex) randomValue = Random.Range(0, 5);
+                currentLevelIndex = randomValue;
+                Levels[currentLevelIndex].CreateLevel();
+            }
+        
+        }
+        public void RetryLevel()
+        {
+            Levels[currentLevelIndex].DestroyLevel();
+            Levels[currentLevelIndex].CreateLevel();
+        }
     
+    }
 }

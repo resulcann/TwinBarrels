@@ -12,7 +12,7 @@ namespace Game
     {
         public static GameManager Instance { get; private set; }
         public TextMeshProUGUI scoreText;
-        public int diamondScore = 0;
+        public float diamondScore = 0;
         [Header("References")]
         public GameplayController gameplayController;
         public DynamicSettings dynamicSettings;

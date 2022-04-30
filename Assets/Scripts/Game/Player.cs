@@ -12,11 +12,10 @@ namespace Game
 
         private float _mouseStartPos, _mouseCurrentPos, _playerCurrentPos, _leftBarrelCurrentPos, _rightBarrelCurrentPos;
         public Transform leftBarrel, rightBarrel;
-        // public GameplayController gameplayController;
         private SplineFollower _splineFollower;
-        
 
-        void Awake()
+
+        private void Awake()
         {
             _splineFollower = GetComponentInParent<SplineFollower>();
         }
@@ -72,17 +71,6 @@ namespace Game
 
                 
             }
-        
-            
-        }
-
-        public void SpeedUp()
-        {
-            _splineFollower.followSpeed = 8f;
-        }
-        public void SpeedDown()
-        {
-            _splineFollower.followSpeed = 5f;
         }
     }
 }

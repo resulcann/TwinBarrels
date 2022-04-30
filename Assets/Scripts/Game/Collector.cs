@@ -12,7 +12,6 @@ namespace Game
         [SerializeField] private GameObject barrel, rootBarrel, brokenBarrel, brokenBox, brokenThorn;
         [SerializeField] private Material greenMat;
         [SerializeField] private SplineFollower splineFollower;
-        private int _finishLootCounter = 0;
 
         private void Awake()
         {
@@ -62,8 +61,9 @@ namespace Game
             {
                 Destroy(other.gameObject);
                 GameManager.Instance.diamondScore++;
-                GameManager.Instance.scoreText.text = GameManager.Instance.diamondScore.ToString();
-            }
+                var tempScore = (int)(GameManager.Instance.diamondScore);
+                GameManager.Instance.scoreText.text = tempScore.ToString();
+            }    
 
             if (other.gameObject.CompareTag("EnemyBox"))
             {
@@ -96,7 +96,14 @@ namespace Game
             {
                 if (barrelList.Count > 1)
                 { 
-                    StairsClimbing(other.gameObject);
+                    var lowerBarrel = barrelList[1];
+                    lowerBarrel.GetComponentInChildren<Animation>().enabled = false;
+                    lowerBarrel.transform.rotation = new Quaternion(0f,0f,0f,0f);
+                    lowerBarrel.transform.parent = transform.root;
+                    barrelList.Remove(lowerBarrel);
+                    other.GetComponent<MeshRenderer>().material = greenMat;
+
+                    transform.parent.localPosition += Vector3.up/2;
                 }
                 else
                 {
@@ -108,12 +115,17 @@ namespace Game
             {
                 if (barrelList.Count > 1)
                 { 
-                    StairsClimbing(other.gameObject);
-                    _finishLootCounter++;
+                    var lowerBarrel = barrelList[1];
+                    lowerBarrel.GetComponentInChildren<Animation>().enabled = false;
+                    lowerBarrel.transform.rotation = new Quaternion(0f,0f,0f,0f);
+                    lowerBarrel.transform.parent = transform.root;
+                    barrelList.Remove(lowerBarrel);
+                    transform.parent.localPosition += Vector3.up/2;
                 }
                 else
                 {
-                    FinishFailed();
+                    GameplayController.Instance.FinishGameplay(true);
+                    splineFollower.follow = false;
                 }
             }
 
@@ -161,7 +173,7 @@ namespace Game
             {
                 foreach (var body in allBarrelRigidBodies)
                 {
-                    body.AddExplosionForce(500, transform.position, 1);
+                    body.AddExplosionForce(300, transform.position, 1);
                 }
 
                 barrelList.Remove(barrelList[1]);
@@ -172,24 +184,12 @@ namespace Game
             {
                 foreach (var body in allEnemyRigidBodies)
                 {
-                    body.AddExplosionForce(500, collidedBox.position, 1);
+                    body.AddExplosionForce(300, collidedBox.position, 1);
             
                     Destroy(collidedBox.gameObject);
                 }
             
             }
-        }
-
-        private void StairsClimbing(GameObject other)
-        {
-            var lowerBarrel = barrelList[1];
-            lowerBarrel.GetComponentInChildren<Animation>().enabled = false;
-            lowerBarrel.transform.rotation = new Quaternion(0f,0f,0f,0f);
-            lowerBarrel.transform.parent = transform.root;
-            barrelList.Remove(lowerBarrel);
-            other.GetComponent<MeshRenderer>().material = greenMat;
-
-            transform.parent.localPosition += Vector3.up/2;
         }
 
         private void FinishFailed()
