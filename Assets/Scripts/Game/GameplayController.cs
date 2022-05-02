@@ -1,51 +1,54 @@
 ﻿using System;
-using UnityEngine;
 using MoreMountains.NiceVibrations;
+using UnityEngine;
 
-public class GameplayController : MonoBehaviour
+namespace Game
 {
-    public static GameplayController Instance { get; private set; }
-    public bool IsActive { get; set; }
-
-    public Action<bool> OnGameplayFinished;
-
-    private void Awake()
+    public class GameplayController : MonoBehaviour
     {
-        Instance = this;
-    }
+        public static GameplayController Instance { get; private set; }
+        public bool IsActive { get; set; }
 
-    public void StartGameplay()
-    {
-        IsActive = true;
-    }
+        public Action<bool> OnGameplayFinished;
 
-    public void RetryGameplay()
-    {
-        IsActive = true;
-    }
-
-    public void FinishGameplay(bool success)
-    {
-        IsActive = false;
-
-        var hapticType = success ? HapticTypes.Success : HapticTypes.Failure;
-
-        MMVibrationManager.Haptic(hapticType);
-        OnGameplayFinished?.Invoke(success);
-    }
-
-    private void Update()
-    {
-        if (!IsActive)
-            return;
-
-        if (Input.GetKeyDown(KeyCode.U))
+        private void Awake()
         {
-            FinishGameplay(true);
+            Instance = this;
         }
-        else if (Input.GetKeyDown(KeyCode.J))
+
+        public void StartGameplay()
         {
-            FinishGameplay(false);
+            IsActive = true;
+        }
+
+        public void RetryGameplay()
+        {
+            IsActive = true;
+        }
+
+        public void FinishGameplay(bool success)
+        {
+            IsActive = false;
+
+            var hapticType = success ? HapticTypes.Success : HapticTypes.Failure;
+
+            MMVibrationManager.Haptic(hapticType);
+            OnGameplayFinished?.Invoke(success);
+        }
+
+        private void Update()
+        {
+            if (!IsActive)
+                return;
+
+            if (Input.GetKeyDown(KeyCode.U))
+            {
+                FinishGameplay(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.J))
+            {
+                FinishGameplay(false);
+            }
         }
     }
 }

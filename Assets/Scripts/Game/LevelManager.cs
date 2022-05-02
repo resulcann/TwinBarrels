@@ -7,7 +7,7 @@ namespace Game
     {
         public static LevelManager Instance { get; private set; }
         public List<Level> Levels;
-        public int currentLevelIndex = 0;
+        public int currentLevelIndex;
         private bool _isRandom;
 
         private void Awake() 

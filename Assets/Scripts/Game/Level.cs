@@ -11,7 +11,7 @@ namespace Game
 
         public void CreateLevel()
         {
-            _spawnedLevelPrefab = Instantiate(levelPrefab) as GameObject;
+            _spawnedLevelPrefab = Instantiate(levelPrefab);
         }
 
         public void DestroyLevel()

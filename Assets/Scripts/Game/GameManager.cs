@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Magiclab.MarketingSDK.Core;
 using Magiclab.Utility.GenericUtilities;
 using MoreMountains.NiceVibrations;
@@ -12,7 +11,7 @@ namespace Game
     {
         public static GameManager Instance { get; private set; }
         public TextMeshProUGUI scoreText;
-        public float diamondScore = 0;
+        public float diamondScore;
         [Header("References")]
         public GameplayController gameplayController;
         public DynamicSettings dynamicSettings;

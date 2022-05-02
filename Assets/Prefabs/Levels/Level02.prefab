@@ -61667,7 +61667,7 @@ MonoBehaviour:
   m_PitchDamping: 0
   m_YawDamping: 0
   m_RollDamping: 0
-  m_AngularDamping: 3
+  m_AngularDamping: 1.5
 --- !u!1 &7721269816497101572
 GameObject:
   m_ObjectHideFlags: 0
@@ -61796,7 +61796,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7721269816821600312}
-  m_LocalRotation: {x: 0.112483874, y: -0.08195345, z: 0.009309445, w: 0.9902244}
+  m_LocalRotation: {x: 0.11248388, y: -0.08195346, z: 0.009309447, w: 0.9902244}
   m_LocalPosition: {x: 1.5, y: 6, z: -5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

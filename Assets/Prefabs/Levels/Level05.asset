@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c3a70843658fd4dab9a39d43c91f80, type: 3}
   m_Name: Level05
   m_EditorClassIdentifier: 
-  levelPrefab: {fileID: 8771545443500715678, guid: 7ebd1abbe4ec4a444a5174605d80c3f4,
+  levelPrefab: {fileID: 8771545443500715678, guid: ef50c87bc5473f941be3f8fa5621040c,
     type: 3}
   levelIndex: 5
